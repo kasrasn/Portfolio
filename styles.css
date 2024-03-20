@@ -1,0 +1,159 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 400;
+  margin: 0 auto;
+  width: fit-content;
+  /* background-color: #FBF7F4; */
+}
+
+#about > * {
+  margin-bottom: 25px;
+}
+
+.list li {
+  margin-bottom: 10px;
+}
+.multimedia {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.multimedia p {
+  margin-right: 10px;
+}
+
+.body img {
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.sub-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-nav p {
+  margin-left: 15px;
+}
+
+a {
+  color: #4c525c;
+  position: relative;
+  text-decoration: none;
+}
+
+#about a {
+    text-decoration: underline;
+}
+
+#about li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+a:hover {
+  color: black;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-container {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#about {
+  max-width: 900px;
+}
+
+b {
+  font-weight: 700;
+  color: black;
+}
+
+#background-canvas {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: -1; /* Places the canvas behind other elements */
+  pointer-events: none; /* Ensures clicks and mouse events pass through to elements below */
+  width: 100%; /* Adjust the canvas size to cover the entire viewport */
+  height: 100%; /* Adjust the canvas size to cover the entire viewport */
+}
+
+#title {
+  color: #4c525c;
+}
+
+#blogs {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 700px) {
+  .images {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .multimedia {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #about {
+    max-width: 300px;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sub-nav p {
+    margin-left: 15px;
+  }
+}
+
+/* 
+a::before {
+  background: hsl(45 100% 70%) ;
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.2s ease-in-out;
+  z-index: -1;
+}
+
+a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+} */
