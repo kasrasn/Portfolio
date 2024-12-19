@@ -1,13 +1,12 @@
 .body {
   display: flex;
-  background-color: rgb(241, 224, 205);
+  background-color: rgb(25, 11, 67, 26);
   flex-direction: column;
   text-align: left;
   font-family: "Roboto Mono", sans-serif;
   font-weight: 400;
   margin: 0 auto;
   width: fit-content;
-  /* background-color: #FBF7F4; */
 }
 
 #about > * {
@@ -49,7 +48,7 @@
 }
 
 a {
-  color: #4c525c;
+  color: rgb(247, 248, 182, 97);
   position: relative;
   text-decoration: none;
 }
@@ -64,7 +63,7 @@ a {
 }
 
 a:hover {
-  color: black;
+  color: rgb(255, 138, 71, 100);
 }
 
 .images {
@@ -85,12 +84,13 @@ a:hover {
 }
 
 #about {
+  color: rgb(255, 106, 111, 100);
   max-width: 900px;
 }
 
 b {
   font-weight: 700;
-  color: black;
+  color: rgb(247, 248, 182, 97);
 }
 
 #background-canvas {
@@ -104,7 +104,7 @@ b {
 }
 
 #title {
-  color: #4c525c;
+  color: rgb(17, 170, 247, 97);
 }
 
 #blogs {

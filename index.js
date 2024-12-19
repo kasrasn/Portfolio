@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var hue = ((t + i) / 3) % 360; // Change hue value over time
       //   ctx.strokeStyle = `hsla(${hue}, 95%, 75%, 33%)`; // Set stroke color
       //   ctx.strokeStyle = `rgba(0,0,0,${t+i})`;
-      ctx.strokeStyle = `rgba(0,0,0,0.18)`;
+      ctx.strokeStyle = `rgba(17,188,247,0.18)`;
       ctx.lineWidth = 0.5; // Define line width
       ctx.stroke();
       ctx.closePath();
@@ -46,16 +46,18 @@ document.addEventListener("DOMContentLoaded", function () {
   draw();
 });
 
+
 const x1 = (t) => {
-  return Math.cos(t / 10) * 100 + Math.sin(t / 10) * 6;
+  return Math.cos( 0.3 * t) * 100 + Math.sin(t / 10) * 4;
 };
+
 const y1 = (t) => {
-  return Math.sin(t / 10) * 100;
+  return Math.sin(0.3 * t) * 100;
 };
 
 const x2 = (t) => {
-  return Math.sin(t / 10) * 200 + Math.sin(t) * 6;
+  return Math.sin(t / 6.5) * 100 + Math.sin(t) * 4;
 };
 const y2 = (t) => {
-  return Math.cos(t / 10) * 100 + Math.cos(t / 8) * 6;
+  return Math.cos(t / 6.5) * 100 + Math.cos(t / 10) * 4;
 };
