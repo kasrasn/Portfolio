@@ -3,13 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
   var ctx = canvas.getContext("2d");
 
   // Set canvas width and height to cover the entire screen
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
 
   var dotRadius = 10;
   var dotColor = "black";
-  var shiftX = canvas.width / 2; // Center dot horizontally
-  var shiftY = canvas.height / 2; // Center dot vertically
 
   var t = 0; // Initialize the value of t
   var num_lines = 800;
@@ -17,6 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function draw() {
     // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    let shiftX = canvas.width / 2;// Center dot horizontally
+    let shiftY = canvas.height / 2;// Center dot vertically
 
     for (let i = 0; i < num_lines; i++) {
       lx1 = x1(t + i) * 4 + shiftX;

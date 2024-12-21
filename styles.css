@@ -1,5 +1,9 @@
 .body {
   display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgb(25, 11, 67, 26);
   flex-direction: column;
   text-align: left;
@@ -7,6 +11,23 @@
   font-weight: 400;
   margin: 0 auto;
   width: fit-content;
+}
+
+#background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* behind everything */
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 900px; /* or whatever you like */
+  margin: 0 auto;   /* centers content horizontally */
+  font-family: "Roboto Mono", sans-serif;
 }
 
 #about > * {
@@ -36,6 +57,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .sub-nav {
