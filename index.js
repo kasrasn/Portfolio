@@ -28,15 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
       ctx.moveTo(lx1, ly1);
       ctx.lineTo(lx2, ly2);
       var hue = ((t + i) / 3) % 360; // Change hue value over time
-      //   ctx.strokeStyle = `hsla(${hue}, 95%, 75%, 33%)`; // Set stroke color
-      //   ctx.strokeStyle = `rgba(0,0,0,${t+i})`;
-      ctx.strokeStyle = `rgba(17,188,247,0.18)`;
-      ctx.lineWidth = 0.5; // Define line width
+      ctx.strokeStyle = `rgba(77,250,92,0.45)`;
+      ctx.lineWidth = 0.4; // Define line width
       ctx.stroke();
       ctx.closePath();
     }
 
-    t += 0.01;
+    t += 0.003; 
 
     // Request the next frame
     requestAnimationFrame(draw);
