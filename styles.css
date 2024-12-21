@@ -92,7 +92,18 @@ a:hover {
 .images {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap ;
+  justify-content: center;
+  gap: 20px;
 }
+
+.images img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
 
 .image-container {
   width: 300px;
@@ -139,6 +150,7 @@ b {
   .images {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .multimedia {
