@@ -2,24 +2,17 @@ document.addEventListener("DOMContentLoaded", function () {
   var canvas = document.getElementById("background-canvas");
   var ctx = canvas.getContext("2d");
 
-  // Only resize on width change to prevent flicker on mobile scroll
-  // (mobile browsers resize viewport height when address bar hides/shows)
-  var lastWidth = window.innerWidth;
-
-  function resizeCanvas() {
-    var newWidth = window.innerWidth;
-    if (newWidth !== lastWidth) {
-      canvas.width = newWidth;
-      canvas.height = window.innerHeight;
-      lastWidth = newWidth;
-    }
-  }
-
-  // Initial size
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  window.addEventListener("resize", resizeCanvas);
+  // Reload the page after user stops resizing for 300ms
+  var resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      window.location.reload();
+    });
+  });
 
   var t = 0;
   var num_lines = 800;
@@ -29,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let shiftX = canvas.width / 2;
     let shiftY = canvas.height / 2;
-    let gap = 125; // half the distance between the two balls
+    let gap = 125;
 
     // ── First ball (green, above center) ──
     for (let i = 0; i < num_lines; i++) {
