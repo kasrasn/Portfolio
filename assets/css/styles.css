@@ -49,6 +49,13 @@ body.body {
   padding: 0 20px;
 }
 
+.navbar h1 a {
+  color: rgb(10, 180, 180);
+}
+.navbar h1 a:hover {
+  color: rgb(213, 80, 107);
+}
+
 .sub-nav {
   display: flex;
   text-align: center;
@@ -61,6 +68,15 @@ body.body {
 }
 
 /* ─── Multimedia Links ──────────────────────────────────────────────── */
+.connect-label {
+  color: rgb(10, 180, 180);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 45px;
+  width: 100%;
+  margin-bottom: 1px;
+}
+
 .multimedia {
   display: flex;
   flex-direction: row;
@@ -80,7 +96,7 @@ body.body {
   justify-content: center;
   color: rgb(247, 248, 182);   /* default color */
   transition: color 0.2s;
-  margin-top: 40px;
+  margin-top: 1px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   padding: 10px;
@@ -251,7 +267,7 @@ hr.footer-line {
 
 .timeline-year {
   color: rgb(213, 80, 107);
-  background-color: rgba(70,5,5,0.5);
+  background-color: rgba(70,5,5,0.2);
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 16px;
