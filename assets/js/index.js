@@ -4,13 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
   var lastWidth = window.innerWidth;
 
   window.addEventListener("resize", function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      if (window.innerWidth !== lastWidth) {
-        lastWidth = window.innerWidth;
-        window.location.reload();
-      }
-    }, 500);
+    var newWidth = window.innerWidth;
+    if (newWidth !== lastWidth) {
+      lastWidth = newWidth;
+      canvas.width = newWidth;
+      canvas.height = window.innerHeight;
+    }
   });
 
   canvas.width = window.innerWidth;
