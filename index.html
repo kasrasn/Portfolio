@@ -17,53 +17,78 @@
   <body class="body">
     <canvas id="background-canvas"></canvas>
     <div class="navbar">
-      <h1><a href="index.html"> > Kasra Sina </a></h1>
+      <div style="width: 90px;"></div>
+      <h1><a href="index.html">  Kasra Sina </a></h1>
       <div class="sub-nav">
         <p>
-          <a href="pages/projects.html"> /* [ LOG ] */</a>
+          <a href="pages/page_1.html"> > TIMELINE </a>
         </p>
       </div>
     </div>
 
-    <div class="multimedia">
-      <p>
-        <a href="https://github.com/kasrasn" target="_blank"> [ Github ]</a>
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/in/kasra-sina/" target="_blank">[ LinkedIn ]</a>
-      </p>
-      <p>
-        <a href="mailto:ksina@uoguelph.ca" target="_blank">[ Email ]</a>
-      </p>
-      <p>
-        <a href="downloads/kasra-sina-resume.pdf" download>[ Download Resume ]</a>
-      </p>
-    </div>
+
 
     <div id="about">
-      <h2 id="title">
-        I'm a <b>Computer Scientist</b>, <b>Student</b>, <b>Teaching Assistant</b>, and <b>Researcher</b>
-      </h2>
 
-      <p>
-        I'm a second year Computer Science student at The University of Guelph and I minor in Political Science.
-      </p>
-      <p>
-        Currently working as an Undergraduate Teaching Assistant for Discrete Structures II under the supervision of Professor Joe Sawada @ UofG.
-      </p>
-      <p>
-      I have been consistently named to the Dean's Honours List in the College of Engineering & Physical Sciences (CEPS) every semester, in recognition of my academic excellence.
-      </p>
-      <p>
-        I also helped out with optimizing the traveling salesman problem @ 
-        <a href="https://indiciumuofg.vercel.app/" target="_blank">STEM Fellowship</a>
-      </p>
-        Interested in Decolonizing AI, machine learning,
-        programming languages and web development.
-      <p>
-        Feel free to reach out!
-      </p>
+      <div class="audience-tabs">
+        <button class="tab active" data-tab="anyone">Anyone</button>
+        <button class="tab" data-tab="recruiters">Recruiters</button>
+        <button class="tab" data-tab="developers">Developers</button>
+        <button class="tab" data-tab="designers">Designers</button>
+      </div>
 
+      <div class="tab-content active" id="tab-anyone">
+        <p>CS student at U of Guelph. I build things for the web and think about who technology leaves behind. Curious about code, design, and the politics of both.</p>
+      </div>
+      <div class="tab-content" id="tab-recruiters">
+        <p>Second year CS student with hands-on TA and research experience. I write clean code, care about design, and show up with more than just technical skills.</p>
+      </div>
+      <div class="tab-content" id="tab-developers">
+        <p>Vanilla HTML, CSS, and JS — no framework bloat. I care about how things are built, not just that they work. Always learning, always breaking things on purpose.</p>
+      </div>
+      <div class="tab-content" id="tab-designers">
+        <p>I believe good design is political. I think about who gets centered in the products we make and who gets left out. I code my own interfaces because I want full control.</p>
+      </div>
     </div>
+
+    <div class="multimedia">
+      <a href="https://github.com/kasrasn" target="_blank" aria-label="Github">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/kasra-sina/" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+      <a href="mailto:ksina@uoguelph.ca" target="_blank" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+        </svg>
+      </a>
+      <a href="downloads/kasra-sina-resume.pdf" download aria-label="Download Resume">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/>
+        </svg>
+      </a>
+    </div>
+    
+    <script>
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+<footer>
+  <hr class="footer-line">
+  <p class="copyright">© 2025 Kasra Sina</p>
+</footer>
+
   </body>
 </html>

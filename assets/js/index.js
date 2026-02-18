@@ -16,47 +16,117 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var t = 0;
   var num_lines = 800;
+  var innerScale = 1;    // inner balls are half the size (2 vs 4)
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     let shiftX = canvas.width / 2;
     let shiftY = canvas.height / 2;
-    let gap = 125;
+    let gap = 100;
+    margin = 250;
 
-    // ── First ball (green, above center) ──
+    // ── First ball (orange, above center) ──
     for (let i = 0; i < num_lines; i++) {
       lx1 = x1(t + i) * 2 + shiftX;
-      ly1 = y1(t + i) * 2 + shiftY - gap;
+      ly1 = y1(t + i) * 2 + shiftY - gap + margin;
       lx2 = x2(t + i) * 2 + shiftX;
-      ly2 = y2(t + i) * 2 + shiftY - gap;
+      ly2 = y2(t + i) * 2 + shiftY - gap + margin;
 
       ctx.beginPath();
       ctx.moveTo(lx1, ly1);
       ctx.lineTo(lx2, ly2);
-      ctx.strokeStyle = `rgba(77, 250, 92, 0.45)`;
+      ctx.strokeStyle = `rgb(213, 80, 107)`;
+      //rgb(213, 80, 107)
       ctx.lineWidth = 0.4;
       ctx.stroke();
       ctx.closePath();
     }
 
-    // ── Second ball (purple, below center) ──
+    // ── Second ball (dark red, below center) ──
     for (let i = 0; i < num_lines; i++) {
       lx1 = x1(t + i) * 2 + shiftX;
-      ly1 = y1(t + i) * 2 + shiftY + gap;
+      ly1 = y1(t + i) * 2 + shiftY + gap + margin;
       lx2 = x2(t + i) * 2 + shiftX;
-      ly2 = y2(t + i) * 2 + shiftY + gap;
+      ly2 = y2(t + i) * 2 + shiftY + gap + margin;
 
       ctx.beginPath();
       ctx.moveTo(lx1, ly1);
       ctx.lineTo(lx2, ly2);
-      ctx.strokeStyle = `rgba(180, 77, 250, 0.45)`;
+      ctx.strokeStyle = `rgb(70, 5, 5)`;
+      //rgb(70, 5, 5)
       ctx.lineWidth = 0.4;
       ctx.stroke();
       ctx.closePath();
     }
 
-    t += 0.003;
+    // ── Inner first ball (opposite direction, above center) ──
+    for (let i = 0; i < num_lines; i++) {
+      lx1 = x1(-t + i) * innerScale + shiftX;
+      ly1 = y1(-t + i) * innerScale + shiftY - gap + margin;
+      lx2 = x2(-t + i) * innerScale + shiftX;
+      ly2 = y2(-t + i) * innerScale + shiftY - gap + margin;
+
+      ctx.beginPath();
+      ctx.moveTo(lx1, ly1);
+      ctx.lineTo(lx2, ly2);
+      ctx.strokeStyle = `rgb(10, 180, 180)`;
+      ctx.lineWidth = 0.4;
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    // ── Inner second ball (opposite direction, below center) ──
+    for (let i = 0; i < num_lines; i++) {
+      lx1 = x1(-t + i) * innerScale + shiftX;
+      ly1 = y1(-t + i) * innerScale + shiftY + gap + margin;
+      lx2 = x2(-t + i) * innerScale + shiftX;
+      ly2 = y2(-t + i) * innerScale + shiftY + gap + margin;
+
+      ctx.beginPath();
+      ctx.moveTo(lx1, ly1);
+      ctx.lineTo(lx2, ly2);
+      ctx.strokeStyle = `rgb(222, 62, 123)`;
+      //rgb(222, 62, 123)
+      //rgb(95, 8, 41)
+      ctx.lineWidth = 0.4;
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+
+    // ── Inner third ball (same direction as outer, below center) scale * 0.5, black ──
+    for (let i = 0; i < num_lines; i++) {
+      lx1 = x1(t + i) * 0.5 + shiftX;
+      ly1 = y1(t + i) * 0.5 + shiftY + gap + margin; 
+      lx2 = x2(t + i) * 0.5 + shiftX;
+      ly2 = y2(t + i) * 0.5 + shiftY + gap + margin;
+      ctx.beginPath();
+      ctx.moveTo(lx1, ly1);
+      ctx.lineTo(lx2, ly2);
+      ctx.strokeStyle = `rgba(0, 0, 0, 0.6)`;
+      //rgb(0, 0, 0, 0.6)
+      ctx.lineWidth = 0.4;
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+        // ── Inner third ball (same direction as outer, below center) scale * 0.5, black ──
+    for (let i = 0; i < num_lines; i++) {
+      lx1 = x1(t + i) * 0.5 + shiftX;
+      ly1 = y1(t + i) * 0.5 + shiftY - gap + margin;
+      lx2 = x2(t + i) * 0.5 + shiftX;
+      ly2 = y2(t + i) * 0.5 + shiftY - gap + margin;
+      ctx.beginPath();
+      ctx.moveTo(lx1, ly1);
+      ctx.lineTo(lx2, ly2);
+      ctx.strokeStyle = `rgba(0, 0, 0, 0.6)`;
+      ctx.lineWidth = 0.4;
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    t += 0.0045;
     requestAnimationFrame(draw);
   }
 
