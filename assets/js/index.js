@@ -3,17 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var ctx = canvas.getContext("2d");
   var lastWidth = window.innerWidth;
 
-  window.addEventListener("resize", function () {
-    var newWidth = window.innerWidth;
-    if (newWidth !== lastWidth) {
-      lastWidth = newWidth;
-      canvas.width = newWidth;
-      canvas.height = window.innerHeight;
-    }
-  });
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
+window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+});
 
 
   var t = 0;
