@@ -45,7 +45,7 @@ body.body {
   width: 100%;
   max-width: 900px;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   padding: 0 20px;
 }
 
@@ -115,6 +115,7 @@ body.body {
 #about {
   color: rgb(247, 248, 182);
   max-width: 900px;
+  font-size: 14px;
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;       
@@ -291,4 +292,11 @@ hr.footer-line {
 
 .timeline-item a {
   text-decoration: underline;
+}
+
+.timeline-coming-soon {
+  color: rgb(213, 80, 107);
+  background-color: rgba(70,5,5,0.2);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
