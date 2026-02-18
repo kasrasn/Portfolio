@@ -1,18 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
   var canvas = document.getElementById("background-canvas");
   var ctx = canvas.getContext("2d");
+  var lastWidth = window.innerWidth;
+
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        window.location.reload();
+      }
+    }, 500);
+  });
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  // Reload the page after user stops resizing for 300ms
-  var resizeTimer;
-  window.addEventListener("resize", function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      window.location.reload();
-    });
-  });
 
   var t = 0;
   var num_lines = 800;
