@@ -5,10 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  let resizeTimer;
   window.addEventListener("resize", function () {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      if (window.innerWidth !== canvas.width) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    } else {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
   });
 
   var t = 0;
