@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
+  const isMobileDevice = window.innerWidth <= 1024;
+  if (isMobileDevice) {
+    canvas.style.width = canvas.width + 'px';
+    canvas.style.height = canvas.height + 'px';
+  }
+  
   window.addEventListener("resize", function () {
     const isMobile = window.innerWidth <= 1024;
 
