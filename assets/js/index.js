@@ -5,20 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  let lockedMobileHeight = window.innerHeight;
-
   window.addEventListener("resize", function () {
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 1024;
 
-    if (isMobile) {
-      if (window.innerWidth !== canvas.width) {
-        // real resize (rotation) — update the lock
-        lockedMobileHeight = window.innerHeight;
-        canvas.width = window.innerWidth;
-        canvas.height = lockedMobileHeight;
-      }
-      // everything else (URL bar, fast scroll) — ignored
-    } else {
+    if (!isMobile) {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
